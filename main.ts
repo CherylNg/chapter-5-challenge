@@ -5,9 +5,8 @@ edubitTrafficLightBit.setLed(LedColor.Green, edubitTrafficLightBit.digitalStateP
 basic.forever(function () {
     if (edubitIrBit.isIrSensorTriggered()) {
         basic.showIcon(IconNames.Happy)
-        music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once)
+        edubitTrafficLightBit.setLed(LedColor.Red, edubitTrafficLightBit.digitalStatePicker(DigitalIoState.Off))
         edubitTrafficLightBit.setLed(LedColor.Green, edubitTrafficLightBit.digitalStatePicker(DigitalIoState.On))
-        basic.pause(500)
     } else {
         edubitTrafficLightBit.setLed(LedColor.Green, edubitTrafficLightBit.digitalStatePicker(DigitalIoState.Off))
         music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
